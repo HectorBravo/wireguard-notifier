@@ -37,7 +37,7 @@ git clone git@github.com:HectorBravo/wireguard-notifier.git
    - Add the following line to execute the script every minute, replacing the correct path to the repo directory
 
      ```bash
-     * * * * * root cd /path/to/wireguard-client-connection-notification && /path/to/wireguard-client-connection-notification/wg-clients-guardian.sh /path/to/wireguard-client-connection-notification/.config > /dev/null 2>&1
+     * * * * * root cd /path/to/wireguard-notifier && /path/to/wireguard-notifier/wg-clients-guardian.sh /path/to/wireguard-notifier/.config > /dev/null 2>&1
      ```
 
 ### 4. Start Receiving Notifications
