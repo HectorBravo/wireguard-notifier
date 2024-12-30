@@ -8,6 +8,8 @@ notification_channel=both
 ; After X minutes the clients will be considered disconnected
 ; Choose a timeout greater then 5 minutes to limit many false positives
 timeout=5
+; Whitelisted clients will not generate notifications. Separate each one with a space
+; whitelist=client_name1 client_name2
 
 [telegram]
 ; Register your telegram bot https://core.telegram.org/bots
