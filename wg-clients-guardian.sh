@@ -116,7 +116,7 @@ while IFS= read -r LINE; do
         echo "The client $client_name is $send_notification"
         message="$client_name is $send_notification from ip address $remote_ip"
         if [ "telegram" == "$NOTIFICATION_CHANNEL" ] || [ "both" == "$NOTIFICATION_CHANNEL" ]; then
-            curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" -F chat_id="$TELEGRAM_CHAT_ID" -F text="Wireguard: \`$message\`" -F parse_mode="MarkdownV2" > /dev/null 2>&1
+            curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" -F chat_id="$TELEGRAM_CHAT_ID" -F text="\`$message\`" -F parse_mode="MarkdownV2" > /dev/null 2>&1
         fi
         if [ "gotify" == "$NOTIFICATION_CHANNEL" ] || [ "both" == "$NOTIFICATION_CHANNEL" ]; then
             curl -X POST "${GOTIFY_HOST}/message" -H "accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer ${GOTIFY_APP_TOKEN}" -d '{"message": "'"$message"'", "priority": 5, "title": "'"$GOTIFY_TITLE"'"}' > /dev/null 2>&1
